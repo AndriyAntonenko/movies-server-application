@@ -12,8 +12,7 @@ module.exports = app => {
     res.status(err.status || 500);
     res.json({
       success: false,
-      message: err.message,
-      error: process.env.NODE_ENV !== "production" ? err : null
+      message: err.message
     });
   });
 };

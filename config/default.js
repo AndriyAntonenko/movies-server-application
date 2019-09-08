@@ -1,5 +1,5 @@
 module.exports = {
-  PORT: process.env.PORT || 3200,
+  PORT: process.env.PORT || 3000,
   mongoose: {
     url: "mongodb://andrii:123qwe@ds149606.mlab.com:49606/webby-lab",
     options: {

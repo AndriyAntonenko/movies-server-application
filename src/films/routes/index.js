@@ -8,7 +8,16 @@ const router = Router();
 router.post("/film", validation.create, controllers.create);
 router.delete("/film/:id", validation.checkIdInParams, controllers.del);
 
-router.get("/film/title", validation.findByTitle, controllers.findByTitle);
+router.get(
+  "/film/star",
+  validation.findByQueryParam("star"),
+  controllers.findByStar
+);
+router.get(
+  "/film/title",
+  validation.findByQueryParam("title"),
+  controllers.findByTitle
+);
 router.get("/film/:id", validation.checkIdInParams, controllers.findOne);
 
 module.exports = router;

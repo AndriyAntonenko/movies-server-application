@@ -1,9 +1,9 @@
 const checkIdInParams = require("./checkIdInParams");
 const create = require("./create");
-const findByTitle = require("./findByTitle");
+const findByQueryParam = require("./findByQueryParam");
 
 module.exports = {
   create,
   checkIdInParams,
-  findByTitle
+  findByQueryParam
 };

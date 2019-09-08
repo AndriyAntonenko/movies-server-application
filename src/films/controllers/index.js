@@ -1,9 +1,12 @@
 const create = require("./create");
 const del = require("./delete");
+
 const findOne = require("./findOne");
 const findByTitle = require("./findByTitle");
+
 const findByStar = require("./findByStar");
 const findMany = require("./findMany");
+const createFromFile = require("./createFromTextFile");
 
 module.exports = {
   create,
@@ -11,5 +14,6 @@ module.exports = {
   findOne,
   findByTitle,
   findByStar,
-  findMany
+  findMany,
+  createFromFile
 };

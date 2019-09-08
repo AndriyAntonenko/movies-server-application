@@ -5,5 +5,5 @@ module.exports = async function(req, res) {
 
   const newFilm = await Films.create(body);
 
-  res.json(newFilm);
+  res.json({ success: true, newFilm });
 };

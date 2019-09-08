@@ -1,7 +1,9 @@
-const del = require("./delete");
+const checkIdInParams = require("./checkIdInParams");
 const create = require("./create");
+const findByTitle = require("./findByTitle");
 
 module.exports = {
   create,
-  del
+  checkIdInParams,
+  findByTitle
 };

@@ -8,6 +8,7 @@ const router = Router();
 router.post("/film", validation.create, controllers.create);
 router.delete("/film/:id", validation.checkIdInParams, controllers.del);
 
+router.get("/film/list/:page", validation.findMany, controllers.findMany);
 router.get(
   "/film/star",
   validation.findByQueryParam("star"),

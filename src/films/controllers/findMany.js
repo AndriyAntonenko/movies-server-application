@@ -7,12 +7,15 @@ module.exports = async function(req, res) {
   const limit = config.get("filmsPerPage");
   const order = req.query.order || "ASC";
 
-  const films = await Film.find()
-    .select("_id title release")
-    .sort({ title: order === "DESC" ? -1 : 1 })
-    .skip(limit * page)
-    .limit(limit)
-    .lean();
+  const [films, count] = await Promise.all([
+    Film.find()
+      .select("_id title release")
+      .sort({ title: order === "DESC" ? -1 : 1 })
+      .skip(limit * page)
+      .limit(limit)
+      .lean(),
+    Film.count()
+  ]);
 
-  return res.status(200).json({ success: true, films });
+  return res.status(200).json({ success: true, films, count });
 };

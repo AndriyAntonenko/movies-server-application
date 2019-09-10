@@ -3,7 +3,7 @@ const Film = require("../models/Film");
 module.exports = async function(req, res) {
   const { title } = req.query;
 
-  const film = await Film.aggregate([
+  const films = await Film.aggregate([
     {
       $project: {
         title: true,
@@ -21,5 +21,5 @@ module.exports = async function(req, res) {
     { $project: { lowerCaseTitle: false } }
   ]);
 
-  return res.status(200).json({ success: true, film: film[0] });
+  return res.status(200).json({ success: true, films });
 };

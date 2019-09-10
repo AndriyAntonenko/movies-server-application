@@ -70,7 +70,7 @@ module.exports = async function(req, res, next) {
     const films = data
       .toString()
       .split(os.EOL)
-      .filter(str => !!str);
+      .filter(str => !!str.trim());
 
     const filmArrays = [];
 

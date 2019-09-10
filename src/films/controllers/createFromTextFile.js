@@ -87,7 +87,7 @@ module.exports = async function(req, res, next) {
         fieldVal = fieldVal.trim();
 
         if (fieldsList[fieldName] === "stars") {
-          fieldVal = field.split(",").map(star => star.trim());
+          fieldVal = fieldVal.split(",").map(star => star.trim());
         }
 
         if (fieldsList[fieldName] === "release") {

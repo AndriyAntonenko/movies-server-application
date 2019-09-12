@@ -8,7 +8,8 @@ const schema = new Schema(
       type: String,
       minlength: 1,
       maxlength: 150,
-      required: true
+      required: true,
+      unique: true
     },
     release: {
       type: Number,

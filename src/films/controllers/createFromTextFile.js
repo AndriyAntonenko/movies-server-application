@@ -4,7 +4,7 @@ const os = require("os");
 const Joi = require("@hapi/joi");
 const createError = require("http-errors");
 
-const Films = require("../models/Film");
+const create = require("../helpers/createFilm");
 
 function readFile(path) {
   return new Promise((resolve, reject) => {
@@ -104,7 +104,7 @@ module.exports = async function(req, res, next) {
 
     await Promise.all([
       unlinck(req.files.sampleText.path),
-      ...filmsObj.map(film => Films.create(film))
+      ...filmsObj.map(film => create(film))
     ]);
 
     res.status(200).json({ success: true });

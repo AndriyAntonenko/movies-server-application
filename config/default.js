@@ -2,7 +2,7 @@ module.exports = {
   PORT: process.env.PORT || 3002,
   filmsPerPage: 10,
   mongoose: {
-    url: "mongodb://andrii:123qwe@ds149606.mlab.com:49606/webby-lab",
+    url: process.env.DB_URL,
     options: {
       useNewUrlParser: true,
       promiseLibrary: global.Promise,

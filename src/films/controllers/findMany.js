@@ -11,7 +11,11 @@ module.exports = async function(req, res) {
     Film.find()
       .select("_id title release")
       .sort({ title: order === "DESC" ? -1 : 1 })
-      .collation({ locale: "en", caseLevel: true })
+      .collation({
+        locale: "en_US",
+        caseFirst: "upper",
+        numericOrdering: true
+      })
       .skip(limit * page)
       .limit(limit)
       .lean(),

@@ -1,4 +1,4 @@
-# Webby-Lab-Test-Task
+# movies-server-application
 
 ## Instruction for use
 First of all, you need to have ```node``` and ```npm``` on your machine
